@@ -1,6 +1,7 @@
 "use strict";
 
-exports.unsafeByteOffsetBeforeLine = (buffer) => (line) => {
+export function unsafeByteOffsetBeforeLine(buffer) {
+  return (line) => {
     let offset = 0;
 
     let currentLine = line + 1;
@@ -12,13 +13,15 @@ exports.unsafeByteOffsetBeforeLine = (buffer) => (line) => {
     }
 
     return offset;
+  }
 }
 
-exports.unsafeGetByteLength = (buffer) => {
+export function unsafeGetByteLength(buffer) {
     return buffer.byteLength;
 }
 
-exports.unsafeGetLineStr = (source) => (line) => {
+export function unsafeGetLineStr(source) {
+  return (line) => {
     let currentLine = 0;
     let currentIndex = 0;
     while (currentLine < line) {
@@ -28,4 +31,5 @@ exports.unsafeGetLineStr = (source) => (line) => {
         currentIndex += 1;
     }
     return source.slice(currentIndex, source.indexOf("\n", currentIndex));
+  }
 }
