@@ -6,3 +6,10 @@ Instead, this project makes use of the
 [language-cst-parser](https://github.com/natefaubion/purecript-language-cst-parser)
 package to parse source files into their CST representation and into
 Emacs tags.
+
+## Usage
+
+From the root of the project to create tags for:
+```bash
+node ~/projects/purescript-tags/dist/index.js -a -e "src/**/*.purs"
+```
